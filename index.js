@@ -7,6 +7,8 @@ const app = express()
 const port = 3000 || env
 app.use(cors())
 
+const gagansfile = require('./gagansfiles')
+
 // const searchURL = "https://vidcloud9.com/search.html?keyword="
 const searchURL = 'https://www3.watchserieshd.tv/search.html?keyword='
 const domain = 'https://www3.watchserieshd.tv'
@@ -60,6 +62,8 @@ app.get('/type', (req, res) => {
   var a = ['Music', 'Movies', 'Books', 'Test', 'Music', 'Movies', 'Books', 'Test', 'Test', 'Test', 'Test', 'Test']
   res.json(a)
 })
+
+app.use('/gagan',gagansfile)
 
 app.get('/', (req, res) => {
   res.send('Helo from ')
